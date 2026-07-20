@@ -32,9 +32,6 @@
 
   .titlebar{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
   .titlebar-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:2px;padding:0 24px;}
-  .dots{display:flex;gap:6px;padding:14px 14px 14px 0;}
-  .dots span{width:10px;height:10px;border-radius:50%;display:inline-block;}
-  .dots span:nth-child(1){background:#f27568;} .dots span:nth-child(2){background:#f0b45b;} .dots span:nth-child(3){background:#5eead4;}
   .tab{font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:12px 16px;color:var(--text-dim);border-right:1px solid var(--line);cursor:pointer;white-space:nowrap;text-decoration:none;}
   .tab.active{color:var(--accent);background:var(--panel);border-bottom:2px solid var(--accent);}
   .tab:hover{color:var(--text);}
@@ -48,20 +45,72 @@
 
   .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
 
-  .hero{padding:90px 0 70px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+  .hero{.hero{
+  padding:90px 0 70px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  min-height:100vh;
+}}
   .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--line) 1px, transparent 1px) 0 0/100% 34px;opacity:.12;pointer-events:none;}
-  .hero-inner{max-width:720px;position:relative;}
-  .hero-stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:36px;padding-top:28px;border-top:1px solid var(--line);}
+ .hero-inner{
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+  .hero-stats{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
   .hero-stat{font-family:'JetBrains Mono',monospace;}
   .hero-stat .num{font-size:22px;color:var(--accent);font-weight:700;display:block;}
   .hero-stat .label{font-size:11.5px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.04em;}
-  .prompt-line{font-family:'JetBrains Mono',monospace;color:var(--text-dim);font-size:13px;margin-bottom:20px;}
+.prompt-line{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--text-dim);
+    font-size:13px;
+    margin-bottom:20px;
+    text-align:center;
+    width:100%;
+}
   .prompt-line .sym{color:var(--accent);}
-  .hero h1{font-size:clamp(30px,5.4vw,50px);font-weight:700;margin:0 0 6px;letter-spacing:-0.02em;}
+.hero h1{
+    font-size:clamp(42px,6vw,72px);
+    font-weight:700;
+    margin:0 auto 15px;
+    text-align:center;
+    width:100%;
+    letter-spacing:-0.02em;
+}
   .hero h1 .lastname{color:var(--accent);}
-  .hero .role{font-family:'JetBrains Mono',monospace;font-size:14.5px;color:var(--accent-2);margin:0 0 22px;}
-  .hero p.lead{max-width:560px;color:var(--text);font-size:15.5px;margin:0 0 28px;}
-  .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+ .hero .role{
+    font-family:'JetBrains Mono',monospace;
+    font-size:18px;
+    color:var(--accent-2);
+    margin:0 auto 25px;
+    text-align:center;
+} .hero p.lead{
+    max-width:900px;
+    margin:0 auto 30px;
+    text-align:center;
+}
+  .cta-row{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+}
   .btn{font-family:'JetBrains Mono',monospace;font-size:13px;padding:11px 20px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);transition:all .15s ease;cursor:pointer;background:transparent;color:var(--text);}
   .btn-primary{background:var(--accent);color:#04211c;border-color:var(--accent);font-weight:700;}
   .btn-primary:hover{filter:brightness(1.1);}
@@ -70,7 +119,13 @@
   @keyframes blink{50%{opacity:0;}}
 
   .hero .lead{max-width:640px;font-size:16.5px;}
-  .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 4px;}
+  .hero-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+    margin:24px 0;
+}
   .hero-tag{
     font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent-3);
     border:1px solid var(--line);padding:4px 12px;border-radius:20px;
@@ -113,10 +168,6 @@
   .flip-front,.flip-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--radius);border:1px solid var(--line);padding:22px;background:var(--panel);}
   .flip-front{display:flex;flex-direction:column;justify-content:space-between;}
   .flip-back{transform:rotateY(180deg);background:var(--panel-2);overflow-y:auto;}
-
-
-
-
   .flip-front h3{margin:0 0 8px;font-size:17px;}
   .flip-front .year{font-family:'JetBrains Mono',monospace;color:var(--text-dim);font-size:12px;}
   .flip-front .hint{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--accent);margin-top:auto;}
@@ -174,21 +225,20 @@
 
 <div class="titlebar">
   <div class="titlebar-inner">
-    <div class="dots"><span></span><span></span><span></span></div>
-    <a class="tab active" href="#about">about.py</a>
-    <a class="tab" href="#skills">skills.json</a>
-    <a class="tab" href="#github">github.stats</a>
-    <a class="tab" href="#projects">projects.py</a>
-    <a class="tab" href="#experience">experience.log</a>
-    <a class="tab" href="#education">education.md</a>
-    <a class="tab" href="#contact">contact.sh</a>
+    <a class="tab active" href="#about">About.py</a>
+    <a class="tab" href="#skills">Skills.json</a>
+    <a class="tab" href="#github">Github.stats</a>
+    <a class="tab" href="#projects">Projects.py</a>
+    <a class="tab" href="#experience">Experience.log</a>
+    <a class="tab" href="#education">Education.md</a>
+    <a class="tab" href="#contact">Contact.sh</a>
     <div class="theme-toggle"><button class="theme-btn" id="themeBtn">☾ dark</button></div>
   </div>
 </div>
 
 <header class="hero">
   <div class="reveal">
-    <div class="prompt-line"><span class="sym">~$</span> whoami</div>
+    <div class="prompt-line"><span class="sym">~$</span> WHO AM I</div>
     <h1>Kondrathi Shiva <span class="lastname">Shankar</span></h1>
     <p class="role"><span style="color:var(--accent-3)">const</span> role = <span style="color:var(--accent)">"Aspiring Software Engineer"</span><span class="cursor"></span></p>
     <p class="lead">Python developer and web development enthusiast building AI-driven solutions — from real-time computer vision systems that classify traffic in real time, to NLP pipelines that keep children safer online. I care about writing clean, well-structured code and turning research-grade ideas into applications that actually ship. Based in Hyderabad, Telangana, and currently open to Software Engineering, Python, and Web Development roles.</p>
@@ -232,11 +282,6 @@
       <div class="skill-card">
         <h3>Web Technologies</h3>
         <div class="bar-row"><div class="bar-label"><span>HTML5 / CSS3</span><span class="pct">80%</span></div><div class="bar-track"><div class="bar-fill" data-w="80"></div></div></div>
-
-
-
-
-
         <div class="bar-row"><div class="bar-label"><span>Django (Basics)</span><span class="pct">60%</span></div><div class="bar-track"><div class="bar-fill" data-w="60"></div></div></div>
       </div>
       <div class="skill-card">
@@ -352,13 +397,6 @@
 <section id="education">
   <div class="wrap">
     <div class="sec-head"><span class="tag">06</span><h2>Education &amp; Certifications</h2></div>
-
-
-
-
-
-
-
     <div class="two-col">
       <div class="info-card">
         <h3>B.Tech — Computer Science Engineering</h3>
@@ -456,7 +494,8 @@
   revealEls.forEach(s => { s.style.opacity = 0; io2.observe(s); });
 
   // contact form -> mailto
-  document.getElementById('contactForm').addEventListener('submit', function(e){
+  document.getElementById('contactForm').addEventListener
+  ('submit', function(e){
     e.preventDefault();
     const name = document.getElementById('cf-name').value;
     const email = document.getElementById('cf-email').value;
