@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website.
 
 ## 🌐 Live Portfolio
-https://ShivaShankar2026.github.io/
+https://shivashankar2026.github.io/Portfolio/
 
 ## 👨‍💻 About Me
 Aspiring Software Engineer passionate about Python development, web development, and AI-driven solutions — with hands-on experience across Machine Learning, NLP, and Computer Vision projects.
